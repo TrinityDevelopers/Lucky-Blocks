@@ -3,7 +3,7 @@
 int LuckyBlockTile::luckyBlockID = 0;
 Random* LuckyBlockTile::random = new Random();
 
-void LuckyBlockTile::LuckyBlockTile(std::string name) : Tile(LBCoreUtil::findNextBlockID(luckyBlockID), name, &Material::decoration) {
+LuckyBlockTile::LuckyBlockTile(std::string name) : Tile(LBCoreUtil::findNextBlockID(luckyBlockID), name, Material::decoration) {
 	if(!luckyBlockID)
 		luckyBlockID = LBCoreUtil::BlockID;
 	setNameId(name);

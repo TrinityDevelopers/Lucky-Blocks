@@ -9,5 +9,5 @@ public:
 	
 	static void initTiles();
 	
-	static void addCreativeItems();
+	static void initCreativeItems();
 };

@@ -1,5 +1,5 @@
 #include "LuckyBlockItem.h"
 
-void LuckyBlockItem::LuckyBlockItem(int) : TileItem(int) { 
+LuckyBlockItem::LuckyBlockItem(int id) : TileItem(id) { 
 	
 };

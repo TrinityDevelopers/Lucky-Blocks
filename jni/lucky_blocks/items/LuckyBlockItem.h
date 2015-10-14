@@ -5,4 +5,4 @@
 class LuckyBlockItem : public TileItem {
 public:
 	LuckyBlockItem(int);
-}
+};

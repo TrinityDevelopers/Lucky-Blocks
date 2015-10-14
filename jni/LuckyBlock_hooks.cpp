@@ -28,7 +28,7 @@ static void Item$initCreativeItems() {
 static std::string (*_I18n$get)(std::string const&, std::vector<std::string,std::allocator<std::string>> const&);
 static std::string I18n$get(std::string const& key, std::vector<std::string,std::allocator<std::string>> const& a) {
 	if(key == "tile.lucky_block.name") return "Lucky Block";
-	return _I18n_get(key, a);
+	return _I18n$get(key, a);
 };
 
 JNIEXPORT jint JNI_OnLoad(JavaVM* vm, void* reserved) {
