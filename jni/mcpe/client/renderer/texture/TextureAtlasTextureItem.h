@@ -1,16 +1,14 @@
 #pragma once
-
 #include <string>
 #include <vector>
-#include "TextureUVCoordinateSet.h"
+class TextureUVCoordinateSet;
 
-class TextureAtlasTextureItem
-{
+class TextureAtlasTextureItem {
 public:
-	TextureAtlasTextureItem();
-	TextureAtlasTextureItem(const TextureAtlasTextureItem &);
-	TextureAtlasTextureItem(const std::string &, const std::vector<TextureUVCoordinateSet> &);
-	void getName() const;
-	int uvCount() const;
-	TextureUVCoordinateSet operator[](int) const;
+	std::string name;
+	std::vector<TextureUVCoordinateSet> textures;
+	int count;
+	
+	const TextureUVCoordinateSet& operator[](int) const;
 };
+

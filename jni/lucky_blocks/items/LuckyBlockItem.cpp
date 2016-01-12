@@ -1,5 +1,5 @@
 #include "LuckyBlockItem.h"
 
-LuckyBlockItem::LuckyBlockItem(int id) : TileItem(id) { 
+LuckyBlockItem::LuckyBlockItem(const std::string& name, int id) : BlockItem(name, id) { 
 	
 };

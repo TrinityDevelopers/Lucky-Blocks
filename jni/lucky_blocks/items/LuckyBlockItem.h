@@ -1,8 +1,8 @@
 #pragma once
 
-#include "mcpe/item/TileItem.h"
+#include "mcpe/world/item/BlockItem.h"
 
-class LuckyBlockItem : public TileItem {
+class LuckyBlockItem : public BlockItem {
 public:
-	LuckyBlockItem(int);
+	LuckyBlockItem(const std::string&, int);
 };
