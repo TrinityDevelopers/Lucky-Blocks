@@ -1,7 +1,7 @@
 #include "LuckyBlock.h"
 
 #include "mcpe/leveledit.h"
-#include "mcpe/item/ItemInstance.h"
+#include "mcpe/world/item/ItemInstance.h"
 
 LuckyBlock::LuckyBlock(const std::string& name, int id) : 
 	Block(name, id, name, Material::getMaterial(MaterialType::EXPLOSIVE)) {
@@ -14,5 +14,5 @@ LuckyBlock::LuckyBlock(const std::string& name, int id) :
 
 void LuckyBlock::onRemove(BlockSource& bs, const BlockPos& pos) {
 	//drop everything! :)
-	popResource(bs, pos, ItemInstance(luckyBlockID, 0, 10));
+	popResource(bs, pos, ItemInstance(blockId, 0, 10));
 }
