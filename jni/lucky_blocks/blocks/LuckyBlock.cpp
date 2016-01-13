@@ -14,5 +14,9 @@ LuckyBlock::LuckyBlock(const std::string& name, int id) :
 
 void LuckyBlock::onRemove(BlockSource& bs, const BlockPos& pos) {
 	//drop everything! :)
-	popResource(bs, pos, ItemInstance(blockId, 0, 10));
+	popResource(bs, pos, ItemInstance(blockId, 10, 0));
+}
+
+int LuckyBlock::getResource(Random& rand, int i1, int i2) {
+	return NULL;
 }
