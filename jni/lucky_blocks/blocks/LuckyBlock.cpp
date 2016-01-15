@@ -4,7 +4,7 @@
 #include "mcpe/world/item/ItemInstance.h"
 
 LuckyBlock::LuckyBlock(const std::string& name, int id) : 
-	Block(name, id, name, Material::getMaterial(MaterialType::EXPLOSIVE)) {
+	Block(name, id, name, Material::getMaterial(MaterialType::DECORATION)) {
 	
 	creativeCategory = 2;
 	setDestroyTime(0.5F);
