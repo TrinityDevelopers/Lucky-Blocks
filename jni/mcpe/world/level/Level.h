@@ -5,6 +5,7 @@
 class AABB;
 class Entity;
 class Player;
+class Random;
 
 class Level : public BlockSourceListener {
 public:
@@ -17,5 +18,6 @@ public:
 	virtual void addGlobalEntity(std::unique_ptr<Entity>);
 	
 	bool checkAndHandleWater(const AABB&, MaterialType, Entity*);
+	Random* getRandom();
 };
 
