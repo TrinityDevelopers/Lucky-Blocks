@@ -7,8 +7,10 @@
 
 #include "mcpe/world/item/Item.h"
 #include "mcpe/world/level/block/Block.h"
+#include "mcpe/world/item/recipes/Recipes.h"
 
 #include "lucky_blocks/LuckyBlocks.h"
+#include "lucky_blocks/recipes/LuckyCrafting.h"
 
 void (*_Block$initBlocks)();
 void Block$initBlocks() {
@@ -29,6 +31,13 @@ static std::string I18n$get(std::string const& key, std::vector<std::string,std:
 	if(key == "tile.lucky_block.name") return "Lucky Block";
 	return _I18n$get(key, a);
 };
+
+void (*_Recipes$init)(Recipes*);
+void Recipes$init(Recipes* self) {
+	_Recipes$init(self);
+	
+	LuckyCrafting::initRecipes(self);
+}
 
 Block* (*_Block$Block1)(Block*, const std::string&, int, const Material&);
 Block* Block$Block1(Block* block, const std::string& name, int id, const Material& material) {
@@ -55,6 +64,7 @@ Block* Block$Block3(Block* block, const std::string& name, int id, const std::st
 JNIEXPORT jint JNI_OnLoad(JavaVM* vm, void* reserved) {
 	MSHookFunction((void*) &Block::initBlocks, (void*) &Block$initBlocks, (void**) &_Block$initBlocks);
 	MSHookFunction((void*) &Item::initCreativeItems, (void*) &Item$initCreativeItems, (void**) &_Item$initCreativeItems);
+	MSHookFunction((void*) &Recipes::init, (void*) &Recipes$init, (void**) &_Recipes$init);
 	
 	void* I18n_get = dlsym(RTLD_DEFAULT, "_ZN4I18n3getERKSsRKSt6vectorISsSaISsEE");
 	MSHookFunction(I18n_get, (void*) &I18n$get, (void**) &_I18n$get);
