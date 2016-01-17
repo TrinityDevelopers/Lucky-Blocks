@@ -15,7 +15,12 @@ LuckyBlock::LuckyBlock(const std::string& name, int id) :
 
 void LuckyBlock::onRemove(BlockSource& bs, const BlockPos& pos) {
 	//drop everything! :)
-	popResource(bs, pos, ItemInstance(bs.getLevel()->getRandom()->genrand_int32() % 512, 10, 0));
+	int testId = bs.getLevel()->getRandom()->genrand_int32() % 512;
+	while(Item::mItems[testId] == NULL) {
+		testId = bs.getLevel()->getRandom()->genrand_int32() % 512;
+	}
+	
+	popResource(bs, pos, ItemInstance(testId, 10, 0));
 }
 
 int LuckyBlock::getResource(Random& rand, int i1, int i2) {
