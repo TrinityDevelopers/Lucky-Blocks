@@ -15,6 +15,7 @@ public:
 	Material& getMaterial(const BlockPos&);
 	bool setBlockAndData(const BlockPos&, FullBlock, int);
 	bool setBlock(const BlockPos&, BlockID, int);
+	bool setExtraData(const BlockPos&, unsigned short);
 	void removeBlock(const BlockPos&);
 	BlockEntity* getBlockEntity(const BlockPos&);
 };
