@@ -31,7 +31,7 @@ void LuckyBlocks::registerBlock(Block* block, BlockItem* blockItem) {
 
 int LuckyBlocks::getNewRandomBlockID() {
 	for(int id = 0; id < 256; id++) {
-		if(Block::mBlocksHook[id] == NULL) {
+		if(Block::mBlocks[id] == NULL) {
 			return id;
 		}
 	}
