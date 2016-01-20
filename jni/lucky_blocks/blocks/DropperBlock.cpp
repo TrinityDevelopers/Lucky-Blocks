@@ -1,11 +1,11 @@
-#include "DispenserBlock.h"
+#include "DropperBlock.h"
 #include "mcpe/leveledit.h"
 
-DispenserBlock::DispenserBlock(const std::string& name, int id) : 
+DropperBlock::DropperBlock(const std::string& name, int id) : 
 	Block(name, id, name, Material::getMaterial(MaterialType::DECORATION)) {
 	
-	creativeCategory = 2;
-	setDestroyTime(0.5F);
+	creativeCategory = 3;
+	setDestroyTime(3.5F);
 	setSoundType(SOUND_METAL);
 	
 }
