@@ -1,6 +1,7 @@
 #include "LuckyCrafting.h"
 
 #include "lucky_blocks/LuckyBlocks.h"
+#include "lucky_blocks/DispenserBlocks.h"
 
 #include "mcpe/world/item/ItemInstance.h"
 #include "mcpe/world/item/Item.h"
@@ -12,10 +13,14 @@ std::vector<Recipes::Type> LuckyCrafting::_ingredients;
 void LuckyCrafting::initRecipes(Recipes* instance) {
     _Instance = instance;
     
-    pushIngredient(41, 0, 'g');
-    pushIngredient(61, 0, 'd');
+        pushIngredient(41, 0, 'g');
+	pushIngredient(4, 0, 's');
+	pushIngredient(331, 0, 'r');
+	pushIngredient(261, 0, 'b');
+        pushIngredient(DispenserBlocks::dispenserBlock->blockId, 0, 'd');
 
     addRecipe(LuckyBlocks::luckyBlock->blockId, 1, {"ggg", "gdg", "ggg"});
+    addRecipe(DispenserBlocks::dispenserBlock->blockId, 1, {"sss", "sbs", "srs"});
 }
 
 void LuckyCrafting::pushIngredient(int id, int data, char letter) {
