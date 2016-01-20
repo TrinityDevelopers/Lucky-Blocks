@@ -11,12 +11,14 @@
 
 #include "lucky_blocks/LuckyBlocks.h"
 #include "lucky_blocks/recipes/LuckyCrafting.h"
+#include "lucky_blocks/DispenserBlocks.h"
 
 void (*_Block$initBlocks)();
 void Block$initBlocks() {
 	_Block$initBlocks();
 	
 	LuckyBlocks::initBlocks();
+	DispenserBlocks::initBlocks();
 }
 
 void (*_Item$initCreativeItems)();
@@ -24,11 +26,13 @@ void Item$initCreativeItems() {
 	_Item$initCreativeItems();
 
 	LuckyBlocks::initCreativeItems();
+	DispenserBlocks::initCreativeItems();
 }
 
 static std::string (*_I18n$get)(std::string const&, std::vector<std::string,std::allocator<std::string>> const&);
 static std::string I18n$get(std::string const& key, std::vector<std::string,std::allocator<std::string>> const& a) {
 	if(key == "tile.lucky_block.name") return "Lucky Block";
+	if(key == "tile.dispenser_block.name") return "Dispenser";
 	return _I18n$get(key, a);
 };
 
